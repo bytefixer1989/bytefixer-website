@@ -28,6 +28,12 @@ button { font-family: inherit; cursor: pointer; border: none; }
 .nav-links { display: flex; align-items: center; gap: 4px; }
 .nav-links a { padding: 8px 16px; font-size: 0.88rem; font-weight: 500; color: var(--text2); border-radius: 8px; transition: all .2s; }
 .nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.04); }
+.nav-links.nav-hidden a, .nav-links.nav-hidden .nav-cta { opacity: 0; transform: translateY(-10px); pointer-events: none; transition: all .4s ease; }
+.nav-links.nav-visible a, .nav-links.nav-visible .nav-cta { opacity: 1; transform: translateY(0); pointer-events: all; }
+.nav-links.nav-visible a:nth-child(1) { transition-delay: 0s; }
+.nav-links.nav-visible a:nth-child(2) { transition-delay: 0.05s; }
+.nav-links.nav-visible a:nth-child(3) { transition-delay: 0.1s; }
+.nav-links.nav-visible a:nth-child(4) { transition-delay: 0.15s; }
 .nav-cta { background: linear-gradient(135deg, var(--blue), #2d6ec4) !important; color: #fff !important; font-weight: 600 !important; box-shadow: 0 0 20px rgba(59,139,235,0.2); }
 .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; z-index: 1001; padding: 4px; }
 .nav-toggle span { width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: all .2s; }

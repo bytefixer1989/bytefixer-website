@@ -4,7 +4,16 @@ const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
+  const scrolled = window.scrollY > 60;
+  navbar.classList.toggle('scrolled', scrolled);
+  // Show/hide nav links based on scroll
+  if (scrolled) {
+    navLinks.classList.remove('nav-hidden');
+    navLinks.classList.add('nav-visible');
+  } else {
+    navLinks.classList.add('nav-hidden');
+    navLinks.classList.remove('nav-visible');
+  }
 });
 
 if (navToggle) {
